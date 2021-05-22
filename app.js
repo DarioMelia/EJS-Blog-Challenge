@@ -11,6 +11,7 @@ const app = express();
 
 const posts =  [];
 
+
 app.set('view engine', 'ejs');
 
 app.use(express.urlencoded({extended: true}));
@@ -20,7 +21,8 @@ app.use(express.static("public"));
 app.get("/", function(req, res){
   res.render("home", {
     homeContent: homeStartingContent,
-    posts: posts
+    posts: posts,
+    
   });
 
 });
@@ -42,19 +44,18 @@ app.get("/compose", function(req,res){
 });
 
 app.get("/posts/:title", function(req, res){
-  const urlTitle = _.lowerCase(req.params.title);
+   const urlTitle = _.lowerCase(req.params.title);
 
   posts.forEach(function(post){
 
     let postTitleLowCase = _.lowerCase(post.title);
 
     if(postTitleLowCase === urlTitle){
-      console.log("Match Found!")
+
       res.render("post", {
         post:post
+
       })
-    } else if(postTitleLowCase != urlTitle) {
-      console.log("No match found :(")  
     }
   });
 
@@ -67,6 +68,7 @@ app.post("/compose", function(req,res){
   const text = req.body.postText;
   const post = {
     title: postTitle,
+    kebabTitle: _.kebabCase(postTitle),
     body: text
   }
   posts.push(post);

@@ -1,7 +1,57 @@
+:root{
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  overflow: overlay;
+}
+
 .container-fluid {
     padding-top: 70px;
     padding-bottom: 70px;
 }
+
+.container-body{
+  margin: 0 4rem;
+  padding: 0 3em;
+  width: 80%;
+  max-width: 1230px;
+  font-size: 1rem;
+  overflow-y: scroll;
+  max-height: calc(100vh - 200px);
+}
+
+
+
+
+@media only screen and (max-width: 767px){
+  .container-body{
+    max-height: calc(100vh - 235px);
+  }
+}
+
+
+/* .post-text{
+ white-space: nowrap;
+ overflow: hidden;
+ text-overflow: ellipsis;
+
+
+}
+@supports (-webkit-line-clamp: 3) {
+.post-text{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: initial;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+
+}
+
+  } */
+
+
+
+
 .navbar {
     padding-top: 1em;
     padding-bottom: 1em;
@@ -12,6 +62,7 @@
     letter-spacing: 5px;
     background-color: #f6f6f6;
     color: #6f6f6f;
+
 }
 .navbar-nav  li a:hover {
     color: #1abc9c !important;
@@ -51,5 +102,46 @@
 a{
   text-decoration: none;
   color: #8b8b8b;
+}
 
+h1 a{
+  color: black;
+}
+
+h1 a:hover{
+  color: #1abc9c;
+}
+
+.readMore{
+  font-size: .7rem;
+  /* display: flex;
+  justify-content: flex-end; */
+
+}
+
+.readMore:hover{
+  color: #1abc9c;
+}
+
+
+
+::-webkit-scrollbar{
+  width: .7rem;
+
+}
+
+::-webkit-scrollbar-track{
+  background-color: rgba(0,0,0,0);
+
+
+}
+
+::-webkit-scrollbar-thumb{
+  border-radius: 5px;
+  background: #8b8b8b;
+  transition: background 500ms ease-in;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background: #0c8e74;
 }
