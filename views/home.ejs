@@ -3,8 +3,8 @@
   <h1>Home</h1>
   <p><%=homeContent%></p>
   <% posts.forEach(function(post){ %>
-   <h1> <a href="/posts/<%= post.kebabTitle %>"><%= post.title %></a></h1>
-   <p ><span class="post-text"><%= post.body.substring(0, 350) + "...   "%> </span><a class="readMore" href="/posts/<%= post.kebabTitle %>">Read more</a></p>
+   <h1> <a href="/posts/<%= post._id %>"><%= post.title %></a></h1>
+   <p ><span class="post-text"><%= post.text.substring(0, 350) + "...   "%> </span><a class="readMore" href="/posts/<%= post._id %>">Read more</a></p>
 
   <% }) %>
 

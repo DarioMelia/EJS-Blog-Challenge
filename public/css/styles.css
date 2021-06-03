@@ -15,7 +15,8 @@
   width: 80%;
   max-width: 1230px;
   font-size: 1rem;
-  overflow-y: scroll;
+  overflow-y: auto;
+  overflow-x: hidden;
   max-height: calc(100vh - 200px);
 }
 
@@ -64,7 +65,7 @@
     color: #6f6f6f;
 
 }
-.navbar-nav  li a:hover {
+.navbar-nav  li a:hover, .navbar-nav li a:focus{
     color: #1abc9c !important;
 }
 .navbar-brand{
@@ -106,29 +107,36 @@ a{
 
 h1 a{
   color: black;
+
 }
 
-h1 a:hover{
+h1 a, .readMore{
+  display:inline-block;
+  transition: transform 250ms ease-in-out;
+}
+
+h1 a:hover, .readMore:hover, h1 a:focus, .readMore:focus{
   color: #1abc9c;
+  transform: scale(1.08)
 }
 
 .readMore{
   font-size: .7rem;
+
   /* display: flex;
   justify-content: flex-end; */
-
 }
 
-.readMore:hover{
-  color: #1abc9c;
-}
+
 
 
 
 ::-webkit-scrollbar{
   width: .7rem;
 
+
 }
+
 
 ::-webkit-scrollbar-track{
   background-color: rgba(0,0,0,0);
